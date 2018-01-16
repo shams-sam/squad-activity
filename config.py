@@ -10,3 +10,7 @@ VALID_DATA_FILE = DATA_DIR + '/valid_data.json'
 TRAIN_IMAGES_DIR = "./train_images"
 TEST_IMAGES_DIR = "./test_images"
 VALID_IMAGES_DIR = "./valid_images"
+
+RESIZED_TRAIN_DIR = './resized_train'
+RESIZED_TEST_DIR = './resized_test'
+RESIZED_VALID_DIR = './resized_valid'
