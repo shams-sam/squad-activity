@@ -1,5 +1,14 @@
 import cv2
 import numpy as np
+from socket import timeout
+from urllib.error import HTTPError, URLError
+import urllib.request
+
+def download(url, image_path):
+    response = urllib.request.urlopen(url, timeout=10).read()
+    file = open(image_path, 'wb')
+    file.write(response)
+    file.close()
 
 def image_resize(img_path, MAX_PIXEL=299):
     img = cv2.imread(img_path)

@@ -3,6 +3,7 @@ import config
 from urllib.request import urlretrieve
 from tqdm import tqdm
 import sys
+from utility import *
 
 input_params = sys.argv
 
@@ -69,7 +70,7 @@ for _ in selected_config:
         for url in image['url']:
             try:
                 # reference: http://stackabuse.com/download-files-with-python/
-                urlretrieve(url, _['dir'] + "/" + image['imageId'] + ".jpg")
+                download(url, _['dir'] + "/" + image['imageId'] + ".jpg")
                 FOUND = True
                 break
             except:
