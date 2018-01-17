@@ -4,8 +4,13 @@ from socket import timeout
 from urllib.error import HTTPError, URLError
 import urllib.request
 
-def download(url, image_path):
-    response = urllib.request.urlopen(url, timeout=10).read()
+def download(url, image_path, TIMEOUT=10):
+    """
+    Throws HTTPError, URLError or Timeout.
+    Response is a byte object. 
+    Hence, file open in wb mode.
+    """
+    response = urllib.request.urlopen(url, timeout=TIMEOUT).read()
     file = open(image_path, 'wb')
     file.write(response)
     file.close()

@@ -11,9 +11,12 @@ for _ in tqdm(os.listdir(config.TRAIN_IMAGES_DIR)):
     image_write(img, _.replace(config.TRAIN_IMAGES_DIR, config.RESIZED_TRAIN_DIR))
     
 for _ in tqdm(os.listdir(config.TEST_IMAGES_DIR)):
-    _ = config.TEST_IMAGES_DIR + "/" + _
-    img = image_resize(_)
-    image_write(img, _.replace(config.TEST_IMAGES_DIR, config.RESIZED_TEST_DIR))
+    try:
+        _ = config.TEST_IMAGES_DIR + "/" + _
+        img = image_resize(_)
+        image_write(img, _.replace(config.TEST_IMAGES_DIR, config.RESIZED_TEST_DIR))
+    except:
+        print(_)
     
 for _ in tqdm(os.listdir(config.VALID_IMAGES_DIR)):
     _ = config.VALID_IMAGES_DIR + "/" + _
