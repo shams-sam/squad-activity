@@ -69,3 +69,9 @@ VALID_DATA      -> ['images', 'info', 'license', 'annotations']
   ]
 }
 ```
+
+### Data Details
+- Compressesed Resolution Images in **resized_\*.tar.gz**
+- Original Resolution Images in **\*_images.tar.gz**
+
+[**Download Link**](https://drive.google.com/drive/folders/18Jsfitz_BCtcox-a6qD6aMcooGKIQg0I?usp=sharing)
