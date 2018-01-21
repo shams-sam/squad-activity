@@ -3,6 +3,14 @@ import numpy as np
 from socket import timeout
 from urllib.error import HTTPError, URLError
 import urllib.request
+from tensorflow.python.client import device_lib
+
+def check_devices():
+    for _ in device_lib.list_local_devices():
+        print("Device List")
+        print("\t", _.device_type)
+        print("\t\tname:", _.name)
+        print("\t\tmemory_limit:", _.memory_limit)
 
 def download(url, image_path, TIMEOUT=10):
     """
@@ -34,3 +42,6 @@ def image_resize(img_path, MAX_PIXEL=299):
 def image_write(img, path):
     if type(img)!=bool:
         cv2.imwrite(path, img)
+        
+def image_location(img_id, parent_dir, img_ext='.jpg'):
+    return parent_dir + "/" + img_id +  img_ext

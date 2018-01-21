@@ -14,3 +14,5 @@ VALID_IMAGES_DIR = "./valid_images"
 RESIZED_TRAIN_DIR = './resized_train'
 RESIZED_TEST_DIR = './resized_test'
 RESIZED_VALID_DIR = './resized_valid'
+
+MAX_PIXEL = 32
